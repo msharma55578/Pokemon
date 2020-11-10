@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Card, CardDeck, ListGroup, ListGroupItem } from "react-bootstrap";
-
+import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import Navbar from "./Navbar"
 export default class MainPokemon extends Component {
   constructor() {
     super();
@@ -8,6 +8,7 @@ export default class MainPokemon extends Component {
       all:[],
       post: [],
       name:[],
+      search:null
     };
     this.getPokemon();
   }
@@ -17,15 +18,30 @@ export default class MainPokemon extends Component {
     console.log(response.results);
 
     this.setState({
-      //articleCount: response.articleCount,
       post: response.results,
+      name: response.results,
       all: response,
     });
   };
+  searchByName =(e)=>{
+    e.preventDefault();
+    let searched=e.target.search.value
+    console.log(searched)
+
+    for(let i=0;i<this.state.name.length;i++){
+      if(this.state.name[i].name===searched){
+        // this.setState({
+        //   post: this.state.name[i],
+        // },()=>console.log(this.state.post)); 
+        console.log(this.state.name[i].name)
+      }
+    }
+
+  }
   render() {
     return (
       <div >
-        {/* <input onChange=""></input> */}
+        <Navbar loadPokemon={this.searchByName}/>
         <span style={{
             display: "flex",
             flexWrap: "wrap",
