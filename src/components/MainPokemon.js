@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import Navbar from "./Navbar"
+import "./Pokemon.css"
 export default class MainPokemon extends Component {
   constructor() {
     super();
@@ -45,26 +46,24 @@ export default class MainPokemon extends Component {
         <span style={{
             display: "flex",
             flexWrap: "wrap",
-            backgroundColor:"black",
-            // justifyContent:"space-around",
+            backgroundColor:"gray",
+            justifyContent:"space-around",
         
         }}>
           {this.state.post.map((i) => (
             <Card
               style={{
                 width: "18rem",
-                backgroundColor: "blue",
-                // position:"relative",
-                // boxShadow: "5px 5px 2px red 2px silver ",
+                // backgroundColor: "blue",
+                
+                border:"solid",
+                position:"relative",
+                boxShadow: "15px 15px 12px red 12px silver ",
               }}
             >
               <Card.Img variant="top" src={i.image} />
               <Card.Body>
                 <Card.Title>Name:{i.name}</Card.Title>
-                {/* <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text> */}
               </Card.Body>
               <ListGroup className="list-group-flush">
             <ListGroupItem>STATUS: {i.status}</ListGroupItem>
@@ -73,10 +72,6 @@ export default class MainPokemon extends Component {
             <ListGroupItem>ORIGIN: {i.origin.name}</ListGroupItem>
             <ListGroupItem>LAST LOCATION: {i.location.name}</ListGroupItem>
               </ListGroup>
-              <Card.Body>
-                <Card.Link href="#">Card Link</Card.Link>
-                <Card.Link href="#">Another Link</Card.Link>
-              </Card.Body>
             </Card>
           ))}
         </span>

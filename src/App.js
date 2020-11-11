@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import MainPokemon from './components/MainPokemon'
-import MainPokemonClass from './components/PokemonSearch'
+import MainPokemonSearch from './components/PokemonSearch'
 function App() {
   return (
     <div >
-      <MainPokemonClass/>
+      {/* <MainPokemonSearch/> */}
+      <MainPokemon/>
     </div>
   );
 }

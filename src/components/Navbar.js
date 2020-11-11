@@ -6,7 +6,7 @@ export default function Navbar(props) {
             <form onSubmit={props.loadPokemon}>
             <div className="row">
                 <div className="col-md-3 offset-md-2">
-                    <input type="text" className="form-control" name="search" placeholder="country,title,news"/>
+                    <input type="text" className="form-control" name="search" placeholder="Name,Gender,Species"/>
                 </div>
 
                 <div className="col-md-3 mt-md-0 py-2 text-md-left">
